@@ -1,2 +1,3 @@
 # test
-# Elynin Dmitriy Gennadievich
+# Ditriy Gennadievich
+# https://github.com/Psize/test/tree/master
