@@ -5,6 +5,7 @@
 Для установки Zabbix Server 
 a. Установите репозиторий Zabbix
 Документация с сайта  https://www.zabbix.com/ru/download?zabbix=7.2&os_distribution=alma_linux&os_version=9&components=server_frontend_agent&db=pgsql&ws=apache
+
 Исключите пакеты Zabbix поставляемые в репозитории EPEL, если он у Вас установлен. Отредактируйте файл /etc/yum.repos.d/epel.repo и добавте следующую директиву.
 
 [epel]
@@ -24,3 +25,6 @@ c. Создайте базу данных
 
 # sudo -u postgres createuser --pwprompt zabbix
 # sudo -u postgres createdb -O zabbix zabbix
+На хосте Zabbix сервера импортируйте начальную схему и данные. Вам будет предложено ввести недавно созданный пароль.
+
+# zcat /usr/share/zabbix/sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
